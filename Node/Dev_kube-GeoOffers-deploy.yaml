@@ -72,6 +72,16 @@ spec:
             secretKeyRef:
              name: connstr
              key: CONNSTR
+          - name: port
+           valueFrom:
+            configMapKeyRef:
+             name: env-config
+             key: port
+          - name: host
+           valueFrom:
+            configMapKeyRef:
+             name: env-config
+             key: host
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
